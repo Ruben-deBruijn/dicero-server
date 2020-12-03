@@ -12,7 +12,7 @@ const resolvers = require('./graphql/resolvers');
 const graphQlServer = new GraphQLServer({ typeDefs, resolvers });
 
 mongoose.connect(
-   " * connection string Atlas here * ",
+   "mongodb+srv://arjtechnologies2020:arjtechnologies2020@arj-tech.ndlz3.mongodb.net/test?retryWrites=true&w=majority",
    {  useNewUrlParser: true,
       useUnifiedTopology: true,
    });
