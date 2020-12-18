@@ -1,8 +1,13 @@
-const exampleResolvers = require("./Example.resolver");
-
+const clientResolvers = require("./Client.resolver");
+const clientFileResolvers = require("./ClientFile.resolver");
+const observationResolvers = require("./Observation.resolver");
+const userResolvers = require("./User.resolver");
 
 const resolvers = [
-    exampleResolvers,
+    clientResolvers,
+    clientFileResolvers,
+    observationResolvers,
+    userResolvers,
 ];
 
 module.exports = resolvers;

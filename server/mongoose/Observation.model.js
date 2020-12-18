@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ObservationSchema = new Schema({
-    description: { type: String, required: false},
-    client: {type: Schema.Types.ObjectId, ref: 'client'},
-    user: {type: Schema.Types.ObjectId, ref: 'user'},
+    description: { type: String },
+    client: {type: Schema.Types.ObjectId, ref: 'Client', required: true },
+    user: {type: Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
-const Observation = mongoose.model('observation', ObservationSchema);
+const Observation = mongoose.model('Observation', ObservationSchema);
 
 module.exports = Observation;

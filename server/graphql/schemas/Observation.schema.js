@@ -1,20 +1,28 @@
 const observationSchema = 
 
-`extend type Query {
+` extend type Query {
     getObservation(id: ID!): Observation
     getObservations: [Observation]
   }
+
+  extend type Mutation {
+    addObservation(observation: ObservationInput): Observation,
+    deleteObservation(id: ID!): ID!,
+    updateObservation(id: ID!, observation: ObservationInput): Observation
+  }
+
   type Observation {
       id: ID!
       description: String!
-      client: [client]
-      user: [user]
+      client: Client
+      user: User
   }
-  extend type Mutation {
-      addObservation(description: String!, client:[client], user:[user]): Observation!,
-      deleteObservation(id: ID!): String,
-      updateObservation(id: ID!, description: String!, client:[client], user:[user]): Observation!
-  }`;
+
+  input ObservationInput {
+    description: String
+    client: ID
+    user: ID
+}`;
 
   module.exports = observationSchema;
 

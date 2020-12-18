@@ -1,22 +1,32 @@
 const clientSchema = 
 
-`extend type Query {
+` extend type Query {
     getClient(id: ID!): Client
     getClients: [Client]
   }
-  type Client {
-      id: ID!
-      name: String!
-      email: String!
-      address: String!
-      city: String!
-      postalcode: String!
-  }
+
   extend type Mutation {
-      addClient(name: String!, email: String!, address: String!, city: String!, postalcode: String!): Client!,
-      deleteClient(id: ID!): String,
-      updateClient(id: ID!, name: String!, email: String!, address: String!, city: String!, postalcode: String!): Client!
-  }`;
+    addClient(client: ClientInput): Client,
+    deleteClient(id: ID!): ID!,
+    updateClient(id: ID!, client: ClientInput): ID!
+  }
+
+  type Client {
+    id: ID!
+    name: String!
+    email: String!
+    address: String!
+    city: String!
+    postal_code: String!
+  }
+
+  input ClientInput {
+    name: String
+    email: String
+    address: String
+    city: String
+    postal_code: String
+}`;
 
   module.exports = clientSchema;
 

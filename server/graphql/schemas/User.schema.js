@@ -1,23 +1,34 @@
 const userSchema = 
 
-`extend type Query {
+` extend type Query {
     getUser(id: ID!): User
     getUsers: [User]
   }
-  type User {
-      id: ID!
-      name: String!
-      email: String!
-      address: String!
-      city: String!
-      postalcode: String!
-      jobtitle: String!
-  }
+
   extend type Mutation {
-      addUser(name: String!, email: String!, address: String!, city: String!, postalcode: String!, jobtitle: String!): User!,
-      deleteUser(id: ID!): String,
-      updateUser(id: ID!, name: String!, email: String!, address: String!, city: String!, postalcode: String!, jobtitle: String!): User!
-  }`;
+    addUser(user: UserInput): User,
+    deleteUser(id: ID!): ID!,
+    updateUser(id: ID!, user: UserInput): User
+  }
+
+  type User {
+    id: ID!
+    name: String!
+    email: String!
+    address: String!
+    city: String!
+    postal_code: String!
+    job_title: String!
+  }
+
+  input UserInput {
+    name: String
+    email: String
+    address: String
+    city: String
+    postal_code: String
+    job_title: String
+}`;
 
   module.exports = userSchema;
 

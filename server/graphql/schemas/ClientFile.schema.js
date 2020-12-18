@@ -1,20 +1,27 @@
 const clientFileSchema = 
 
-`extend type Query {
-    getClientFile(id: ID!): Observation
-    getClientFiles: [Clientfile]
+` extend type Query {
+    getClientFile(id: ID!): ClientFile
+    getClientFiles: [ClientFile]
   }
+
+  extend type Mutation {
+    addClientFile(clientFile: ClientFileInput): ClientFile,
+    deleteClientFile(id: ID!): ID!,
+  }
+
   type ClientFile {
       id: ID!
-      observation: [observation]
-      client: [client]
-      user: [user]
+      observations: [Observation]
+      client: Client
+      user: User
   }
-  extend type Mutation {
-      addClientFile(observation: [observation], client:[client], user:[user]): ClientFile!,
-      deleteClientFile(id: ID!): String,
-      updateClientFile(id: ID!, observation: [observation], client:[client], user:[user]): ClientFile!
-  }`;
+
+  input ClientFileInput {
+    observations: [ID]
+    client: ID
+    user: ID
+}`;
 
   module.exports = clientFileSchema;
 

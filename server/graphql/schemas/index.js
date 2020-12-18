@@ -1,4 +1,3 @@
-const exampleSchema = require('./Example.schema');
 const clientSchema = require('./Client.schema');
 const userSchema = require('./User.schema');
 const observationSchema = require('./Observation.schema');
@@ -11,7 +10,6 @@ const typeDefs = `
     type Mutation {
         _empty: String
     }
-    ${exampleSchema}
     ${clientSchema}
     ${userSchema}
     ${observationSchema}

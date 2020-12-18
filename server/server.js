@@ -15,6 +15,7 @@ mongoose.connect(
    "mongodb+srv://arjtechnologies2020:arjtechnologies2020@arj-tech.ndlz3.mongodb.net/test?retryWrites=true&w=majority",
    {  useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false,
    });
 
 mongoose.connection.once("open", () => {
