@@ -13,19 +13,17 @@ const clientSchema =
 
   type Client {
     id: ID!
-    name: String!
-    email: String!
-    address: String!
-    city: String!
-    postal_code: String!
+    first_name: String!
+    last_name: String!
+    birthday: String!
+    contact_person: String!
   }
 
   input ClientInput {
-    name: String
-    email: String
-    address: String
-    city: String
-    postal_code: String
+    first_name: String
+    last_name: String
+    birthday: String
+    contact_person: String
 }`;
 
   module.exports = clientSchema;
