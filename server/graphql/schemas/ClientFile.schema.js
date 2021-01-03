@@ -12,12 +12,14 @@ const clientFileSchema =
 
   type ClientFile {
       id: ID!
+      shift: String!
       observations: [Observation]
       client: Client
       user: User
   }
 
   input ClientFileInput {
+    shift: String
     observations: [ID]
     client: ID
     user: ID
