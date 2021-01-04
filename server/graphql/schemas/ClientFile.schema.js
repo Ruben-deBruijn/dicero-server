@@ -7,6 +7,7 @@ const clientFileSchema =
 
   extend type Mutation {
     addClientFile(clientFile: ClientFileInput): ClientFile,
+    updateClientFile(id: ID!, clientFile: ClientFileInput): ClientFile
     deleteClientFile(id: ID!): ID!,
   }
 

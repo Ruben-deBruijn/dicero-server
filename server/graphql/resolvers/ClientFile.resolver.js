@@ -13,9 +13,14 @@ const clientFileResolvers = {
     // Mutations
     Mutation: {
         addClientFile: async (_, { clientFile }) => {
+            console.log(clientFile)
             const newClientFile = new ClientFile({ ...clientFile });
             await newClientFile.save();
             return newClientFile;
+        },
+        updateClientFile: async (_, { id, clientFile }) => {
+            const updatedClientFile = await ClientFile.findByIdAndUpdate(id, clientFile);
+            return updatedClientFile;
         },
         deleteClientFile: async (_, {id}) => {
             await ClientFile.findByIdAndDelete(id);
