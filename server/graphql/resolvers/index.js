@@ -1,11 +1,11 @@
 const clientResolvers = require("./Client.resolver");
-const clientFileResolvers = require("./ClientFile.resolver");
+const observationFileResolvers = require("./ObservationFile.resolver");
 const observationResolvers = require("./Observation.resolver");
 const userResolvers = require("./User.resolver");
 
 const resolvers = [
     clientResolvers,
-    clientFileResolvers,
+    observationFileResolvers,
     observationResolvers,
     userResolvers,
 ];

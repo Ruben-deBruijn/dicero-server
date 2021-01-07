@@ -1,7 +1,7 @@
 const clientSchema = require('./Client.schema');
 const userSchema = require('./User.schema');
 const observationSchema = require('./Observation.schema');
-const clientFileSchema = require('./ClientFile.schema');
+const observationFileSchema = require('./ObservationFile.schema');
 
 const typeDefs = `
     type Query{
@@ -13,7 +13,7 @@ const typeDefs = `
     ${clientSchema}
     ${userSchema}
     ${observationSchema}
-    ${clientFileSchema}
+    ${observationFileSchema}
 `;
 
 module.exports = typeDefs;

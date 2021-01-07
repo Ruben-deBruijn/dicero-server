@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+ 
 const ObservationSchema = new Schema({
     description: { type: String },
     client: {type: Schema.Types.ObjectId, ref: 'Client', required: true },

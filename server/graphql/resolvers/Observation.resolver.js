@@ -21,7 +21,7 @@ const observationResolvers = {
             const updatedObservation = await Observation.findByIdAndUpdate(id, observation);
             return updatedObservation;
         },
-        deleteClientFile: async (_, {id}) => {
+        deleteObservation: async (_, {id}) => {
             await Observation.findByIdAndDelete(id);
             return `Succesfully deleted observation with id: ${id}`;
         }
