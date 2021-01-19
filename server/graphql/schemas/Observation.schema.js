@@ -14,14 +14,10 @@ const observationSchema =
   type Observation {
       id: ID!
       description: String!
-      client: Client
-      user: User
   }
 
   input ObservationInput {
     description: String
-    client: ID
-    user: ID
 }`;
 
   module.exports = observationSchema;

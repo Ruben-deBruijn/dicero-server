@@ -28,10 +28,10 @@ const observationResolvers = {
     },
 
     // Populate
-    Observation: {
-        client: async observation => (await observation.populate('client').execPopulate()).client,
-        user: async observation => (await observation.populate('user').execPopulate()).user,
-    },
+    // Observation: {
+    //     client: async observation => (await observation.populate('client').execPopulate()).client,
+    //     user: async observation => (await observation.populate('user').execPopulate()).user,
+    // },
   };
 
   module.exports = observationResolvers;
