@@ -6,6 +6,9 @@ const ObservationFileSchema = new Schema({
     observations: [{ type: Schema.Types.ObjectId, ref: 'Observation'}],
     client: { type: Schema.Types.ObjectId, ref: 'Client', required: true },
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true},
+},
+{
+    timestamps: true
 });
 
 const ObservationFile = mongoose.model('ObservationFile', ObservationFileSchema);

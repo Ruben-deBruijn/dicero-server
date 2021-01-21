@@ -17,6 +17,7 @@ const observationFileSchema =
       observations: [Observation]
       client: Client
       user: User
+      createdAt: Date @date
   }
 
   input ObservationFileInput {

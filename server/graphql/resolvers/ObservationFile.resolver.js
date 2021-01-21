@@ -3,7 +3,10 @@ const ObservationFile = require('../../mongoose/ObservationFile.model');
 const observationFileResolvers = {
     // Queries
     Query: {
-        getObservationFiles: async() => ObservationFile.find(),
+        getObservationFiles: async() => {
+            let results = await ObservationFile.find();
+            return results;
+        },
         getObservationFile: async (_,{ id }) => {
             const result = await ObservationFile.findById(id);
             return result;
