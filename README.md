@@ -1,6 +1,12 @@
 # Dicero NodeJS / GraphQL server
 
-Dicero's back-end, running on NodeJS + GraphQL Server
+# Stack:
+
+- NodeJS
+- GraphQL Server
+- Express
+- Mongoose
+- MongoDB (Atlas)
 
 Data is handled by Mongoose + MongoDB.
 
