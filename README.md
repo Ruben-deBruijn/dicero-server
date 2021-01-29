@@ -8,8 +8,6 @@
 - Mongoose
 - MongoDB (Atlas)
 
-Data is handled by Mongoose + MongoDB.
-
 ### Start command
 
 ### `npm run start`
